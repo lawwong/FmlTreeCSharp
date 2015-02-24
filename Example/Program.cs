@@ -5,8 +5,6 @@ using System.Linq;
 using System.Text;
 
 namespace github.com.lawwong.FmlTreeCSharp {
-	public class BaseCl { }
-	public class Cl : BaseCl { }
 	class Program {
 		static void Main(string[] args) {
 			//(0.3 + (0.014 * (argA ^ 1.4))) * argB * (argC ^ 0.1)
