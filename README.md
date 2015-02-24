@@ -52,7 +52,7 @@ Console.WriteLine(mulNode.GetSingle());	// 4.1f * 2 = 8.2f
 If only argC is out of date, addNode will recalculate, but powNode won't
 ```
 argC.SetSingle(4.2f);
-Console.WriteLine(addNode.GetSingle());	// 	4.2f + (3.5 ^ 2) = 16.45
+Console.WriteLine(addNode.GetSingle());	// 	4.2f + 12.25 = 16.45
 ```
 mulNode will recalculate as well
 ```
