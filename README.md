@@ -40,7 +40,7 @@ Clear and Add
 addNode.ClearChild();
 addNode.AddChild(argC);
 addNode.AddChild(powNode);
-Console.WriteLine(addNode.GetSingle());	// 4.1f + (3.5 ^ 2) = 16.35
+Console.WriteLine(addNode.GetSingle());	// 4.1f + 12.25 = 16.35
 ```
 ## Other Variable Arguments Operator
 Multiple, Min, Max take variable arguments, too
