@@ -49,15 +49,20 @@ namespace FmlTreeCSharp {
 		}
 
 		public override string ToString() {
+			string str;
 			switch (BaseType) {
 				case BaseValueType.Int32:
 				return Val.GetInt32(BaseType).ToString();
 				case BaseValueType.Int64:
 				return Val.GetInt64(BaseType).ToString() + "L";
 				case BaseValueType.Single:
-				return Val.GetSingle(BaseType).ToString() + "F";
+				str = Val.GetSingle(BaseType).ToString();
+				if (!str.Contains(_numberDecimalSeparator)) {
+					str += ".0";
+				}
+				return str + "F";
 				case BaseValueType.Double:
-				string str = Val.GetDouble(BaseType).ToString();
+				str = Val.GetDouble(BaseType).ToString();
 				if (!str.Contains(_numberDecimalSeparator)) {
 					str += ".0";
 				}
