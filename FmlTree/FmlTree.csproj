@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D69AB6C1-B81D-42FD-9DE6-5E2F0A0F2BC4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>github.com.lawwong.FmlTreeCSharp</RootNamespace>
+    <AssemblyName>FmlTree</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="class\FmlArityOp.cs" />
+    <Compile Include="class\operator\FmlAddInv.cs" />
+    <Compile Include="class\operator\FmlAbs.cs" />
+    <Compile Include="class\operator\FmlAdd.cs" />
+    <Compile Include="class\operator\FmlCeiling.cs" />
+    <Compile Include="class\operator\FmlDiv.cs" />
+    <Compile Include="class\operator\FmlFloor.cs" />
+    <Compile Include="class\operator\FmlLog.cs" />
+    <Compile Include="class\operator\FmlLog10.cs" />
+    <Compile Include="class\operator\FmlLogE.cs" />
+    <Compile Include="class\operator\FmlMax.cs" />
+    <Compile Include="class\operator\FmlMod.cs" />
+    <Compile Include="class\operator\FmlMul.cs" />
+    <Compile Include="class\operator\FmlMulInv.cs" />
+    <Compile Include="class\operator\FmlRand.cs" />
+    <Compile Include="class\operator\FmlRound.cs" />
+    <Compile Include="class\operator\FmlSqrt.cs" />
+    <Compile Include="class\operator\FmlSub.cs" />
+    <Compile Include="class\operator\FmlToDouble.cs" />
+    <Compile Include="class\operator\FmlToInt32.cs" />
+    <Compile Include="class\operator\FmlToInt64.cs" />
+    <Compile Include="class\operator\FmlToSingle.cs" />
+    <Compile Include="class\operator\FmlTruncate.cs" />
+    <Compile Include="enum\BaseValueType.cs" />
+    <Compile Include="class\FmlOp.cs" />
+    <Compile Include="class\operator\FmlMin.cs" />
+    <Compile Include="class\operator\FmlPow.cs" />
+    <Compile Include="Fml.cs" />
+    <Compile Include="class\FmlArg.cs" />
+    <Compile Include="class\FmlNode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="struct\UnionValue.cs" />
+    <Compile Include="class\FmlVariableOp.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
