@@ -4,65 +4,60 @@ using System;
 namespace Example {
 	class Program {
 		static void Main(string[] args) {
-			//f1 = (0.3 + (0.014 * (argA ^ 1.4))) * argB * (argC ^ 0.1)
-			//f2 = (0.005 + (0.0001 * (argA ^ 1.7))) * argD / 2
-			FmlArg argA = Fml.Arg(10);	// BaseType == int
-			FmlArg argB = Fml.Arg(9999L);	// BaseType == long
-			FmlArg argC = Fml.Arg(16.3f);	// BaseType == float
-			FmlArg argD = Fml.Arg(22.5);	// BaseType == double
+			// Support 4 base value type : int, long, float, double
+			FmlArg argA = Fml.Arg(2);	// BaseType == int
+			FmlArg argB = Fml.Arg(3L);	// BaseType == long
+			FmlArg argC = Fml.Arg(4.1f);	// BaseType == float
+			FmlArg argD = Fml.Arg(5.2);	// BaseType == double
 
-			FmlNode fml1;
-			fml1 = Fml.Pow(argA, Fml.Arg(1.4));
-			fml1 = Fml.Mul(fml1, Fml.Arg(0.014));
-			fml1 = Fml.Add(fml1, Fml.Arg(0.3));
-			fml1 = Fml.Mul(fml1, argB, Fml.Pow(argC, Fml.Arg(0.1)));
-			fml1 = Fml.ToInt64(fml1);
+			// Both FmlArg and FmlPow are FmlNode
+			FmlPow powNode = Fml.Pow(Fml.Arg(3.5), argA);
+			Console.WriteLine(powNode.GetDouble());	// 3.5 ^ 2 = 12.25
 
-			FmlNode fml2;
-			fml2 = Fml.Pow(argA, Fml.Arg(1.7));
-			fml2 = Fml.Mul(Fml.Arg(0.0001), fml2);
-			fml2 = Fml.Add(Fml.Arg(0.005), fml2);
-			fml2 = Fml.Mul(fml2, argD);
-			fml2 = Fml.Div(fml2, Fml.Arg(2.0));
+			// powNode store result in double but it can be retrieved by any other types
+			Console.WriteLine(powNode.GetInt64());	// (long)12.25 = 12
 
-			Console.WriteLine("argA = " + argA);
-			Console.WriteLine("--------------------------");
+			// Addition accept multiple FmlNode as arguments.
+			// And most operator select type automatically, float addition is used in this case
+			FmlAdd addNode = Fml.Add(argA, Fml.Arg(3), Fml.Arg(2.5f));
+			Console.WriteLine(addNode.GetSingle());	// 2 + 3 + 2.5 = 7.5f
 
-			Console.WriteLine("#fml1:");
-			Console.WriteLine("Int32 = " + fml1.GetInt32());
-			Console.WriteLine("Int64 = " + fml1.GetInt64());
-			Console.WriteLine("Single = " + fml1.GetSingle());
-			Console.WriteLine("Double = " + fml1.GetDouble());
-			Console.WriteLine("ToString = " + fml1);	// print value stored in this node in form of fml1.BastType
-			Console.WriteLine("CalculateString = " + fml1.CalculateString());	// opName[result](args...)
-			Console.WriteLine("#fml2:");
-			Console.WriteLine("Int32 = " + fml2.GetInt32());
-			Console.WriteLine("Int64 = " + fml2.GetInt64());
-			Console.WriteLine("Single = " + fml2.GetSingle());
-			Console.WriteLine("Double = " + fml2.GetDouble());
-			Console.WriteLine("ToString = " + fml2);
-			Console.WriteLine("CalculateString = " + fml2.CalculateString());
+			// manipulate child nodes
+			addNode.ReplaceChild(argA, argB);
+			Console.WriteLine(addNode.GetSingle());	// 3 + 3 + 2.5 = 8.5f
 
-			Console.WriteLine("--------------------------");
-			argA.SetInt32(argA.GetInt32() + 1);
-			Console.WriteLine("increase argA by one...");
-			Console.WriteLine("argA = " + argA);
-			Console.WriteLine("--------------------------");
+			addNode.RemoveChild(argB);
+			Console.WriteLine(addNode.GetSingle());	// 3 + 2.5 = 5.5f
 
-			Console.WriteLine("#fml1:");
-			Console.WriteLine("Int32 = " + fml1.GetInt32());
-			Console.WriteLine("Int64 = " + fml1.GetInt64());
-			Console.WriteLine("Single = " + fml1.GetSingle());
-			Console.WriteLine("Double = " + fml1.GetDouble());
-			Console.WriteLine("ToString = " + fml1);
-			Console.WriteLine("CalculateString = " + fml1.CalculateString());
-			Console.WriteLine("#fml2:");
-			Console.WriteLine("Int32 = " + fml2.GetInt32());
-			Console.WriteLine("Int64 = " + fml2.GetInt64());
-			Console.WriteLine("Single = " + fml2.GetSingle());
-			Console.WriteLine("Double = " + fml2.GetDouble());
-			Console.WriteLine("ToString = " + fml2);
-			Console.WriteLine("CalculateString = " + fml2.CalculateString());
+			addNode.ClearChild();
+			addNode.AddChild(argC);
+			addNode.AddChild(powNode);
+			Console.WriteLine(addNode.GetSingle());	// 4.1f + (3.5 ^ 2) = 16.35
+
+			// multiple is similar to addition
+			FmlMul mulNode = Fml.Mul(argC, Fml.Arg(2));
+			Console.WriteLine(mulNode.GetSingle());	// 4.1f * 2 = 8.2f
+
+			// calculate on demand
+			argC.SetSingle(4.2f);
+			// If only argC is out of date, addNode will recalculate, but powNode won't
+			Console.WriteLine(addNode.GetSingle());	// 	4.2f + (3.5 ^ 2) = 16.45
+			// mulNode will recalculate as well
+			Console.WriteLine(mulNode.GetSingle());	// 4.2f * 2 = 8.4f
+
+			// Call CalculateString() to get calculation detail for debug
+			// The format of string is opName[resultValue](args...)
+			Console.WriteLine(addNode.CalculateString());	// [16.45F](4.2F + [12.25](3.5 ^ 2))
+			// Remember to get node result or FmlNode.Update() before calling it
+			FmlFloor floorNode = Fml.Floor(argD);
+			floorNode.Update();
+			Console.WriteLine(floorNode.CalculateString());	// Floor[5](5.2)
+
+			// Different type has their own signature
+			Console.WriteLine(Fml.Arg(1));	// 1
+			Console.WriteLine(Fml.Arg(1L));	// 1L
+			Console.WriteLine(Fml.Arg(1f));	// 1.0F
+			Console.WriteLine(Fml.Arg((double)1));	// 1.0
 
 			Console.ReadLine();
 			// TODO : more example
