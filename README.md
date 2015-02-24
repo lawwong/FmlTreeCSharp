@@ -60,7 +60,7 @@ Console.WriteLine(mulNode.GetSingle());	// 4.2f * 2 = 8.4f
 ```
 ## Debug String
 Call CalculateString() to get calculation detail for debug
-The format of string is ```opName[resultValue](args...)```
+The format of string is `opName[resultValue](args...)`
 ```
 Console.WriteLine(addNode.CalculateString());	// [16.45F](4.2F + [12.25](3.5 ^ 2))
 ```
