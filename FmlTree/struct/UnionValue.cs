@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace github.com.lawwong.FmlTreeCSharp {
+namespace FmlTreeCSharp {
 	[StructLayout(LayoutKind.Explicit, Size = 8)]
 	internal struct UnionValue {
 		[FieldOffset(0)]

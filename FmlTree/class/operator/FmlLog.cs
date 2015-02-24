@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace github.com.lawwong.FmlTreeCSharp {
+namespace FmlTreeCSharp {
 	public class FmlLog : FmlArityOp {
 		public FmlLog(BaseValueType t) : this(t, null, null) { }
 		// difference = minuend - subtrahend

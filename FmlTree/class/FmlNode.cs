@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace github.com.lawwong.FmlTreeCSharp {
+namespace FmlTreeCSharp {
 	public abstract class FmlNode {
 		private static string _numberDecimalSeparator = NumberFormatInfo.CurrentInfo.NumberDecimalSeparator;
 		private UnionValue Val;

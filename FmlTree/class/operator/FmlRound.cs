@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace github.com.lawwong.FmlTreeCSharp {
+namespace FmlTreeCSharp {
 	public class FmlRound : FmlArityOp {
 		public FmlRound(BaseValueType t) : this(t, null) { }
 		public FmlRound(BaseValueType t, FmlNode v, int digit = 0, MidpointRounding mode = MidpointRounding.AwayFromZero)

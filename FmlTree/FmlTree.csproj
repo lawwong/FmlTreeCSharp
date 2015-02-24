@@ -7,7 +7,7 @@
     <ProjectGuid>{D69AB6C1-B81D-42FD-9DE6-5E2F0A0F2BC4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>github.com.lawwong.FmlTreeCSharp</RootNamespace>
+    <RootNamespace>FmlTreeCSharp</RootNamespace>
     <AssemblyName>FmlTree</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

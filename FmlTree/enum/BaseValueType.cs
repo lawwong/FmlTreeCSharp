@@ -1,4 +1,4 @@
-﻿namespace github.com.lawwong.FmlTreeCSharp {
+﻿namespace FmlTreeCSharp {
 	public enum BaseValueType {
 		Int32,
 		Int64,

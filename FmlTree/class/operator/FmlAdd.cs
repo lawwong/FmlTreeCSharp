@@ -1,4 +1,4 @@
-﻿namespace github.com.lawwong.FmlTreeCSharp {
+﻿namespace FmlTreeCSharp {
 	public class FmlAdd : FmlVariableOp {
 		public FmlAdd(BaseValueType t) : base(t) { }
 

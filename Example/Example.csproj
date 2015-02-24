@@ -7,8 +7,8 @@
     <ProjectGuid>{2F8B02B3-820D-43C8-8AC6-D39C140C97A4}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>github.com.lawwong.FmlTreeCSharp</RootNamespace>
-    <AssemblyName>FmlTreeTest</AssemblyName>
+    <RootNamespace>FmlTreeCSharp</RootNamespace>
+    <AssemblyName>Example</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

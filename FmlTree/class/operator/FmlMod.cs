@@ -1,4 +1,4 @@
-﻿namespace github.com.lawwong.FmlTreeCSharp {
+﻿namespace FmlTreeCSharp {
 	public class FmlMod : FmlArityOp {
 		public FmlMod(BaseValueType t) : this(t, null, null) { }
 		// quotient = dividend - divisor

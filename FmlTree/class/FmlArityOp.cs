@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace github.com.lawwong.FmlTreeCSharp {
+namespace FmlTreeCSharp {
 	public abstract class FmlArityOp : FmlOp {
 		// arity 必須大於 0
 		protected FmlArityOp(BaseValueType t, int arity)

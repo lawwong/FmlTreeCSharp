@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace github.com.lawwong.FmlTreeCSharp {
+namespace FmlTreeCSharp {
 	public class FmlArg : FmlNode {
 		public FmlArg(BaseValueType t) : base(t) { }
 		public FmlArg(int val) : base(BaseValueType.Int32) { SetInt32(val); }

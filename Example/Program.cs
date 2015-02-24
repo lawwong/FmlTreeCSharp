@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
+﻿using FmlTreeCSharp;
+using System;
 
-namespace github.com.lawwong.FmlTreeCSharp {
+namespace Example {
 	class Program {
 		static void Main(string[] args) {
-			//(0.3 + (0.014 * (argA ^ 1.4))) * argB * (argC ^ 0.1)
-			//(0.005 + (0.0001 * (argA ^ 1.7))) * argD / 2
+			//f1 = (0.3 + (0.014 * (argA ^ 1.4))) * argB * (argC ^ 0.1)
+			//f2 = (0.005 + (0.0001 * (argA ^ 1.7))) * argD / 2
 			FmlArg argA = Fml.Arg(10);	// BaseType == int
 			FmlArg argB = Fml.Arg(9999L);	// BaseType == long
 			FmlArg argC = Fml.Arg(16.3f);	// BaseType == float

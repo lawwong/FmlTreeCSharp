@@ -1,4 +1,4 @@
-﻿namespace github.com.lawwong.FmlTreeCSharp {
+﻿namespace FmlTreeCSharp {
 	public class FmlToSingle : FmlArityOp {
 		public FmlToSingle(FmlNode v)
 			: base(BaseValueType.Single, 1) {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace github.com.lawwong.FmlTreeCSharp {
+namespace FmlTreeCSharp {
 	public class FmlMin : FmlVariableOp {
 		public FmlMin(BaseValueType t) : base(t) { }
 

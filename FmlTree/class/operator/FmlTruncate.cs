@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace github.com.lawwong.FmlTreeCSharp {
+namespace FmlTreeCSharp {
 	public class FmlTruncate : FmlArityOp {
 		public FmlTruncate(BaseValueType t) : this(t, null) { }
 		public FmlTruncate(BaseValueType t, FmlNode v)

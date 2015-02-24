@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace github.com.lawwong.FmlTreeCSharp {
+namespace FmlTreeCSharp {
 	public abstract class FmlOp : FmlNode {
 		protected List<FmlNode> ChildList;
 

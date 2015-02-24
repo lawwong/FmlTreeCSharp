@@ -1,4 +1,4 @@
-﻿namespace github.com.lawwong.FmlTreeCSharp {
+﻿namespace FmlTreeCSharp {
 	public class FmlMulInv : FmlArityOp {
 		public FmlMulInv(BaseValueType t) : this(t, null) { }
 		public FmlMulInv(BaseValueType t, FmlNode v)

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace github.com.lawwong.FmlTreeCSharp {
+namespace FmlTreeCSharp {
 	public class FmlMax : FmlVariableOp {
 		public FmlMax(BaseValueType t) : base(t) { }
 

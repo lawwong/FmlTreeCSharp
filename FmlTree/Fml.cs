@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace github.com.lawwong.FmlTreeCSharp {
+namespace FmlTreeCSharp {
 	public static class Fml {
 		#region private function
 		private static BaseValueType GetProperTypeByParams(params FmlNode[] args) {

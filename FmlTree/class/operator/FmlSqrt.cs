@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace github.com.lawwong.FmlTreeCSharp {
+namespace FmlTreeCSharp {
 	public class FmlSqrt : FmlArityOp {
 		public FmlSqrt(BaseValueType t) : this(t, null) { }
 		public FmlSqrt(BaseValueType t, FmlNode v)

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace github.com.lawwong.FmlTreeCSharp {
+namespace FmlTreeCSharp {
 	public class FmlLogE : FmlArityOp {
 		public FmlLogE(BaseValueType t) : this(t, null) { }
 		public FmlLogE(BaseValueType t, FmlNode v)

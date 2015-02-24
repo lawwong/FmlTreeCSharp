@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace github.com.lawwong.FmlTreeCSharp {
+namespace FmlTreeCSharp {
 	public abstract class FmlVariableOp : FmlOp {
 		protected FmlVariableOp(BaseValueType t)
 			: base(t, 20) {

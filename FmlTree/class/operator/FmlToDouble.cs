@@ -1,4 +1,4 @@
-﻿namespace github.com.lawwong.FmlTreeCSharp {
+﻿namespace FmlTreeCSharp {
 	public class FmlToDouble : FmlArityOp {
 		public FmlToDouble(FmlNode v)
 			: base(BaseValueType.Double, 1) {

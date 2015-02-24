@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace github.com.lawwong.FmlTreeCSharp {
+namespace FmlTreeCSharp {
 	public class FmlCeiling : FmlArityOp {
 		public FmlCeiling(BaseValueType t) : this(t, null) { }
 		public FmlCeiling(BaseValueType t, FmlNode v)

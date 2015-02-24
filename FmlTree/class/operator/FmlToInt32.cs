@@ -1,4 +1,4 @@
-﻿namespace github.com.lawwong.FmlTreeCSharp {
+﻿namespace FmlTreeCSharp {
 	public class FmlToInt32 : FmlArityOp {
 		public FmlToInt32(FmlNode v)
 			: base(BaseValueType.Int32, 1) {
