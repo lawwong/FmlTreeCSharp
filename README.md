@@ -70,7 +70,7 @@ FmlFloor floorNode = Fml.Floor(argD);
 floorNode.Update();
 Console.WriteLine(floorNode.CalculateString());	// Floor[5](5.2)
 ```
-Different type has their own signature
+Overload methods for different type
 ```
 Console.WriteLine(Fml.Arg(1));  // 1
 Console.WriteLine(Fml.Arg(1L)); // 1L
